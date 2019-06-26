@@ -12,7 +12,7 @@ function SuggestionListLayout(props) {
 
 const styles = StyleSheet.create({
 	container: {
-		paddinVertical: 10,
+		paddingVertical: 10,
 		flex: 1,
 	},
 	title: {
