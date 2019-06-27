@@ -5,6 +5,7 @@ import {
   View,
   Image,
   Text,
+  FlatList
 } from 'react-native';
 
 function Suggestion(props) {
@@ -13,16 +14,18 @@ function Suggestion(props) {
     		<View style={styles.left}>
     			<Image
     			  style={styles.cover}
-    			  source={require('../../../assets/logo.png')}
+    			  source={{uri:props.medium_cover_image}}
     			/>
     			<View style={styles.gender}>
-    				<Text style={styles.genderText}>Accion</Text>
+    				<Text style={styles.genderText}>
+    					{props.genres[0]}
+    				</Text>
     			</View>
     		</View>
     		<View style={styles.right}>
-    			<Text style={styles.title}>Titulo</Text>
-    			<Text style={styles.secondary}>Secondary</Text>
-    			<Text style={styles.paragraph}>parrafo</Text>
+    			<Text style={styles.title}>{props.title}</Text>
+    			<Text style={styles.secondary}>{props.year}</Text>
+    			<Text style={styles.paragraph}>{props.rating} Estrellas</Text>
     		</View>
     	</View>
     )
