@@ -23,10 +23,13 @@ const styles = StyleSheet.create({
 		paddingHorizontal: 10
 	},
 	title: {
-		color: '#4c4c4c',
-		fontSize: 20,
+		width:'auto',
+		color: 'black',
+		fontSize: 24,
 		marginBottom: 10,
 		fontWeight: 'bold',
+		backgroundColor: '#fff',
+		textAlign: 'center',
 	}
 })
 

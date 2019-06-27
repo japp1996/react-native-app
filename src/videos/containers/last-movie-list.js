@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {FlatList,Text} from 'react-native';
 import Empty from '../components/empty';
 import Separator from '../../../src/sections/components/horizontal-separator';
-import Suggestion from '../components/suggestion';
+import LastMovie from '../components/last-movie';
 import Layout from '../components/last-movie-list-layout';
 
 class LastMovieList extends Component {
@@ -10,7 +10,7 @@ class LastMovieList extends Component {
 	itemSeparator = () => <Separator/>
 	renderItem = ({item}) => {
 		return (
-			<Suggestion {...item} />
+			<LastMovie {...item} />
 		)	
 	}
 	keyExtractor = (item) => item.id.toString() 
