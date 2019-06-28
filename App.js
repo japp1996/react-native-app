@@ -12,8 +12,8 @@ import Home from './src/screens/containers/home';
 import Header from './src/sections/components/header';
 import SuggestionList from './src/videos/containers/suggestion-list';
 import LastMovieList from './src/videos/containers/last-movie-list';
+import Player from './src/player/containers/player';
 import API from './utils/api';
-import Video from 'react-native-video';
 
 type Props = {};
 export default class App extends Component {
@@ -33,22 +33,10 @@ export default class App extends Component {
     return (
       <Home>
         <Header/>
+        
+        <Player/>
         <Text>Pelicula Big Buck Bunny</Text>
-        <View style={{
-            flex: 1, 
-            height:100
-          }}>
-          <Video source={{uri:'https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4'}} 
-            style={{
-              position: 'absolute',
-              left: 0,
-              right: 0,
-              bottom: 0,
-              top: 0,
-            }}
-            resizeMode="contain"
-          />
-        </View>
+        
         <Text>Buscador</Text>
         <Text>Categorias</Text>
         <LastMovieList list={this.state.lastMovieList}/>
