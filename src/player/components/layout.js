@@ -11,6 +11,9 @@ function Layout(props) {
       	<View style={styles.video}>
       		{ props.video }
       	</View>
+      	<View style={styles.overlay}>
+   	      	{ props.loading && props.loader }
+      	</View>      	
       </View>
     )
 }
@@ -18,7 +21,7 @@ function Layout(props) {
 const styles = StyleSheet.create({
 	container: {
 		'paddingTop': '56.25%',
-	},
+	},     
 	video: {
 		position: 'absolute',
 		left: 0,
@@ -26,6 +29,15 @@ const styles = StyleSheet.create({
 	    bottom: 0,
 	    top: 0,
 	    backgroundColor: 'black',
+	},
+	overlay: {
+		position: 'absolute',
+		left: 0,
+	    right: 0,
+	    bottom: 0,
+	    top: 0,
+	    justifyContent: 'center',
+	    alignItems: 'center',
 	}
 });
 
