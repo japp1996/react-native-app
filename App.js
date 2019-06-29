@@ -35,10 +35,12 @@ export default class App extends Component {
         <Header/>
         
         <Player/>
-        <Text>Pelicula Big Buck Bunny</Text>
-        
-        <Text>Buscador</Text>
-        <Text>Categorias</Text>
+        {
+        //<Text>Pelicula Big Buck Bunny</Text>
+        // <Text>Buscador</Text>
+        // <Text>Categorias</Text>
+        }
+
         <LastMovieList list={this.state.lastMovieList}/>
         <SuggestionList list={this.state.suggestionList}/>
       </Home>
