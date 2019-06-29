@@ -5,29 +5,33 @@ import {
   View,
   Image,
   Text,
-  FlatList
+  TouchableOpacity,
+
 } from 'react-native';
 
 function Suggestion(props) {
     return (
-    	<View style={styles.container}>
-    		<View style={styles.left}>
-    			<Image
-    			  style={styles.cover}
-    			  source={{uri:props.medium_cover_image}}
-    			/>
-    			<View style={styles.gender}>
-    				<Text style={styles.genderText}>
-    					{props.genres[0]}
-    				</Text>
-    			</View>
-    		</View>
-    		<View style={styles.right}>
-    			<Text style={styles.title}>{props.title}</Text>
-    			<Text style={styles.secondary}>{props.year}</Text>
-    			<Text style={styles.paragraph}>{props.rating} Estrellas</Text>
-    		</View>
-    	</View>
+    	<TouchableOpacity
+    		onPress={props.onPress}>
+	    	<View style={styles.container}>
+	    		<View style={styles.left}>
+	    			<Image
+	    			  style={styles.cover}
+	    			  source={{uri:props.medium_cover_image}}
+	    			/>
+	    			<View style={styles.gender}>
+	    				<Text style={styles.genderText}>
+	    					{props.genres[0]}
+	    				</Text>
+	    			</View>
+	    		</View>
+	    		<View style={styles.right}>
+	    			<Text style={styles.title}>{props.title}</Text>
+	    			<Text style={styles.secondary}>{props.year}</Text>
+	    			<Text style={styles.paragraph}>{props.rating} Estrellas</Text>
+	    		</View>
+	    	</View>
+    	</TouchableOpacity>
     )
 }
 
