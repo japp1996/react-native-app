@@ -17,6 +17,7 @@ import API from './utils/api';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './store';
+import Loading from './src/sections/components/loading';
 
 type Props = {};
 export default class App extends Component {
@@ -49,12 +50,12 @@ export default class App extends Component {
         store={store}
       >
         <PersistGate 
-          loading={<Text>Cargando...</Text>}
+          loading={<Loading/>}
           persistor={persistor}>
           <Home>
             <Header/>
             
-            <Player/>
+            <Player/> 
             {
             // <Text>Buscador</Text>
             }

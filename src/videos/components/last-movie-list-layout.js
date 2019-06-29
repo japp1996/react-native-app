@@ -8,7 +8,7 @@ import {
 
 function LastMovieListLayout(props) {
 	return(
-		<ImageBackground source={require('../../../assets/background.jpg')} style={styles.container}>
+		<ImageBackground style={styles.container}>
 			<Text style={styles.title}>
 				{ props.title }
 			</Text>
@@ -20,16 +20,14 @@ function LastMovieListLayout(props) {
 const styles = StyleSheet.create({
 	container: {
 		paddingVertical: 30,
-		paddingHorizontal: 10
+		paddingHorizontal: 10,
 	},
 	title: {
-		width:'auto',
-		color: 'black',
-		fontSize: 24,
+		color: '#4c4c4c',
+		fontSize: 20,
 		marginBottom: 10,
 		fontWeight: 'bold',
-		backgroundColor: '#fff',
-		textAlign: 'center',
+		marginLeft: 8
 	}
 });
 

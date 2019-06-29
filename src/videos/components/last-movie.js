@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 		color: '#fff',
 		fontSize: 40,
 		fontWeight: 'bold',
-		textShadowColor: 'rgba(0,0,0,.75)',
+		textShadowColor: 'rgba(0,0,0,.5)',
 		textShadowOffset: {
 			width: 2,
 			height: 2
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
 		borderRadius: 10,
 		overflow: 'hidden',
 		justifyContent: 'center',
-		alignItems: 'center'
+		alignItems: 'center',
 	}
 });
 
