@@ -4,13 +4,37 @@ import {
   View,
   TextInput
 } from 'react-native';
+import API from '../../../utils/api';
+import {connect} from 'react-redux';
+
+function mapStateToProps(state) {
+	//debugger
+	return {
+		list: state.suggestionList,
+	}
+}
 
 class Search extends Component {
   state = {
   	text: ''
   }
-  handleSubmit = () => {
-
+  handleSubmit = async () => {
+  	this.props.dispatch({
+  		type: 'SET_SUGGESTION_LIST',
+		payload: {
+			suggestionList: this.props.list,
+			rendering: true
+		}
+  	})
+  	console.log(this.props.list)
+  	const suggestionList = await API.searchMovie(this.state.text)
+    this.props.dispatch({
+  		type: 'SET_SUGGESTION_LIST',
+		payload: {
+			suggestionList,
+			rendering: false
+		}
+  	})
   }
   handleChangeText = (text) => {
   	this.setState({
@@ -24,7 +48,7 @@ class Search extends Component {
       	autoCorrect={false}
       	autoCapitalize="none"
       	underlineColorAndroid="blue"
-      	onSubmitEditin={this.handleSubmit}
+      	onSubmitEditing={this.handleSubmit}
       	onChangeText={this.handleChangeText}
       	style={styles.input}
       />
@@ -41,5 +65,4 @@ const styles = StyleSheet.create({
 	}
 });
 
-
-export default Search;
+export default connect(mapStateToProps)(Search);

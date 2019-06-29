@@ -4,7 +4,11 @@
 **/
 
 import React, { Component } from 'react';
-import {FlatList,Text} from 'react-native';
+import {
+	FlatList,
+	Text,
+	ActivityIndicator
+} from 'react-native';
 import Layout from '../components/suggestion-list-layout';
 import Empty from '../components/empty';
 import Separator from '../components/vertical-separator';
@@ -14,7 +18,8 @@ import { connect } from 'react-redux';
 function mapStateToProps(state) {
 	//debugger
 	return {
-		list: state.suggestionList
+		list: state.suggestionList,
+		rendering: state.rendering
 	}
 }
 
@@ -38,6 +43,12 @@ class SuggestionList extends Component {
 	}
 	keyExtractor = (item) => item.id.toString() 
 	render() {
+		console.log(this.props.rendering)
+		if (this.props.rendering) {
+			return(
+				<ActivityIndicator/>
+			)
+		}
 		return (
 			<Layout title="Recomendado para ti">
 				<FlatList 
