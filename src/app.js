@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 
 class AppLayout extends Component {
 	async componentDidMount() {
+
 	    const lastMoviesList = await API.getLastMovies()
 	    this.props.dispatch({
 	      type: 'SET_LAST_MOVIE_LIST',
@@ -46,7 +47,7 @@ class AppLayout extends Component {
 
 function mapStateToProps(state) {
 	return {
-		selectedMovie: state.selectedMovie,
+		selectedMovie: state.selectedMovie
 	}
 }
 

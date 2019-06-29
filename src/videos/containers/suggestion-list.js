@@ -12,7 +12,7 @@ import Suggestion from '../components/suggestion';
 import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
-	debugger
+	//debugger
 	return {
 		list: state.suggestionList
 	}

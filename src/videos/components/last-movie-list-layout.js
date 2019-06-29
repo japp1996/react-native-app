@@ -8,7 +8,7 @@ import {
 
 function LastMovieListLayout(props) {
 	return(
-		<ImageBackground style={styles.container}>
+		<ImageBackground source={require('../../../assets/background.png')} style={styles.container}>
 			<Text style={styles.title}>
 				{ props.title }
 			</Text>

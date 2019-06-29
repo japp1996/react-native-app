@@ -5,6 +5,7 @@ import Header from '../../sections/components/header';
 import Close from '../../sections/components/close';
 import Details from '../../videos/components/details';
 import { connect } from 'react-redux';
+import Orientation from 'react-native-orientation';
 
 import {
   StyleSheet,
@@ -19,6 +20,7 @@ class Movie extends Component {
         movie: null
       }
     })
+    Orientation.lockToPortrait()
   }
   render() {
     return (

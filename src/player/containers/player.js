@@ -43,7 +43,11 @@ class Player extends Component {
     })
   }
   fullScreen = () => {
-    Orientation.lockToLandscape()
+    if (!this.state.fullScreen) {
+      Orientation.lockToLandscape()
+    } else {
+      Orientation.lockToPortrait()
+    }
 
     this.setState({
       fullScreen: !this.state.fullScreen,
@@ -98,6 +102,7 @@ class Player extends Component {
             <FullScreen onPress={this.fullScreen}/>
           </ControlLayout>
         }
+        style={styles.container}
     	>
     	</Layout>
     );
@@ -114,7 +119,7 @@ const styles = StyleSheet.create({
     },
     container: {
     	flex: 1, 
-    	height:100
+    	height: 100
   	}
 });
 
