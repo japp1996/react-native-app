@@ -8,29 +8,6 @@ import {
 } from 'react-native';
 import {WebView} from 'react-native-webview';
 
-const makeHTML = (id) => {
-	return (`
-		<style>
-		.video {
-			position:relative;
-			paddingBottom: 56.25%
-		}
-		iframe {
-			position: absolute;
-			left: 0;
-			top: 0;
-			right: 0;
-			bottom:0;
-			width:100%;
-			height: 100%;
-		}
-		</style>
-		<div class="video">
-			<iframe width="866" height="360" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		</div>
-	`)
-}
-
 function Details(props) {
 	return (
 		<ScrollView>
@@ -48,7 +25,7 @@ function Details(props) {
 					</View>
 					<View style={styles.trailer}>
 						<WebView
-					        source={{ html:makeHTML(props.yt_trailer_code) }}
+					        source={{ uri: `https://www.youtube.com/embed/${props.yt_trailer_code}` }}
 					    />
 					</View>
 				</View>
