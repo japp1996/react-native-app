@@ -14,6 +14,7 @@ function Layout(props) {
       	<View style={styles.overlay}>
    	      	{ props.loading && props.loader }
       	</View>      	
+      	{ props.controls }
       </View>
     )
 }
