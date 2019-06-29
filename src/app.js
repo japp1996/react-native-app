@@ -6,6 +6,7 @@ import {
 import API from '../utils/api';
 import Home from './screens/containers/home';
 import Header from './sections/components/header';
+import Search from './sections/containers/search';
 import SuggestionList from './videos/containers/suggestion-list';
 import LastMovieList from './videos/containers/last-movie-list';
 import Movie from './screens/containers/movie';
@@ -37,7 +38,7 @@ class AppLayout extends Component {
 		return (
         	<Home>
 	            <Header/>
-	            <Text>Buscador</Text>
+	            <Search/>
 	            <LastMovieList/>
 	            <SuggestionList/>
 	        </Home>
