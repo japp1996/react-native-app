@@ -15,7 +15,8 @@ import LastMovieList from './src/videos/containers/last-movie-list';
 import Player from './src/player/containers/player';
 import API from './utils/api';
 import { Provider } from 'react-redux';
-import store from './store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './store';
 
 type Props = {};
 export default class App extends Component {
@@ -47,17 +48,21 @@ export default class App extends Component {
       <Provider
         store={store}
       >
-        <Home>
-          <Header/>
-          
-          <Player/>
-          {
-          // <Text>Buscador</Text>
-          }
+        <PersistGate 
+          loading={<Text>Cargando...</Text>}
+          persistor={persistor}>
+          <Home>
+            <Header/>
+            
+            <Player/>
+            {
+            // <Text>Buscador</Text>
+            }
 
-          <LastMovieList/>
-          <SuggestionList/>
-        </Home>
+            <LastMovieList/>
+            <SuggestionList/>
+          </Home>
+        </PersistGate>
       </Provider>
     );
   }
