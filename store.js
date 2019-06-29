@@ -12,6 +12,7 @@ import storage from 'redux-persist/lib/storage'; // defaults to localStorage for
 const persistConfig = {
   key: 'root',
   storage,
+  blacklist: ['selectedMovie']
 }
 
 const persistedReducer = persistReducer(persistConfig, reducer)
