@@ -31,6 +31,6 @@ const styles = StyleSheet.create({
 		backgroundColor: '#fff',
 		textAlign: 'center',
 	}
-})
+});
 
-export default LastMovieListLayout
+export default LastMovieListLayout;

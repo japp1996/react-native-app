@@ -35,6 +35,6 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'flex-end',
 	}
-})
+});
 
 export default Header;

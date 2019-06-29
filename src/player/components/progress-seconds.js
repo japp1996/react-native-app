@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
 	StyleSheet,
 	View,
@@ -24,6 +24,6 @@ const styles = StyleSheet.create({
 		marginLeft:20,
 		marginRight:20
 	},
-})
+});
 
 export default ProgressSeconds;

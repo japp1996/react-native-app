@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 import {
   StyleSheet,
@@ -19,4 +19,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default HorizontalSeparator
+export default HorizontalSeparator;

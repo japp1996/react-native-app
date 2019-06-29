@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
 	StyleSheet,
 	TouchableHighlight,
@@ -36,6 +36,6 @@ const styles = StyleSheet.create({
 		right: 5,
 		top: 5,
 	}
-})
+});
 
 export default PlayPause;

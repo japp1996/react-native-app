@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
 	separator: {
 		borderTopWidth: 1
 	}
-})
+});
 
 export default VerticalSeparator;

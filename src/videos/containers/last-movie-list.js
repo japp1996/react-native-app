@@ -1,9 +1,20 @@
+/**
+*	Los Containers son los que se pueden conectar al estado de Redux
+*
+**/
+
 import React, { Component } from 'react';
 import {FlatList,Text} from 'react-native';
 import Empty from '../components/empty';
 import Separator from '../../../src/sections/components/horizontal-separator';
 import LastMovie from '../components/last-movie';
 import Layout from '../components/last-movie-list-layout';
+import { connect } from 'react-redux';
+
+function mapStateToProps(state) {
+	//debugger
+	return {}
+}
 
 class LastMovieList extends Component {
 	renderEmpty = () => <Empty text="No hay sugerencias"/>
@@ -29,4 +40,4 @@ class LastMovieList extends Component {
 	}
 }
 
-export default LastMovieList;
+export default connect(mapStateToProps)(LastMovieList);

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
 	StyleSheet,
 	TouchableHighlight,
@@ -20,6 +20,6 @@ const styles= StyleSheet.create({
 		position:'absolute',
 		right:0
 	}
-})
+});
 
 export default FullScreen;

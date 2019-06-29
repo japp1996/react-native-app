@@ -18,5 +18,6 @@ const styles = StyleSheet.create({
 	text: {
 		fontSize:16
 	}
-})
-export default Empty
+});
+
+export default Empty;

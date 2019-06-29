@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold',
 		marginLeft: 8
 	}
-})
+});
 
-export default SuggestionListLayout
+export default SuggestionListLayout;

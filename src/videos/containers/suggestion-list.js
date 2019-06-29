@@ -1,3 +1,8 @@
+/**
+*	Los Containers son los que se pueden conectar al estado de Redux
+*
+**/
+
 import React, { Component } from 'react';
 import {FlatList,Text} from 'react-native';
 import Layout from '../components/suggestion-list-layout';
