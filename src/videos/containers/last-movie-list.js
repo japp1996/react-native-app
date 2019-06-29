@@ -12,8 +12,9 @@ import Layout from '../components/last-movie-list-layout';
 import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
-	//debugger
-	return {}
+	return {
+		list: state.lastMoviesList
+	}
 }
 
 class LastMovieList extends Component {

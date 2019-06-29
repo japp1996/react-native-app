@@ -24,12 +24,23 @@ export default class App extends Component {
     lastMovieList: [],*/
   }
   async componentDidMount() {
-    const movies = await API.getSuggestion(10)
-    const lastMovies = await API.getLastMovies()
-    /*this.setState({
-      suggestionList: movies,
-      lastMovieList: lastMovies,
-    })*/
+    const lastMoviesList = await API.getLastMovies()
+    store.dispatch({
+      type: 'SET_LAST_MOVIE_LIST',
+      payload: {
+        lastMoviesList
+      }
+    })
+
+    const suggestionList = await API.getSuggestion(10)
+    store.dispatch({
+      type: 'SET_SUGGESTION_LIST',
+      payload: {
+        suggestionList
+      }
+    })
+
+
   }
   render() {
     return (
@@ -41,9 +52,7 @@ export default class App extends Component {
           
           <Player/>
           {
-          //<Text>Pelicula Big Buck Bunny</Text>
           // <Text>Buscador</Text>
-          // <Text>Categorias</Text>
           }
 
           <LastMovieList/>
