@@ -1,0 +1,38 @@
+PRIMERO:
+    `keytool -genkey -v -keystore [NAME].keystore -alias [NAME]-alias -keyalg RSA -keysize 2048 validity 10000`
+
+    mover el archivo generado a android/app/
+
+SEGUNDO:
+    abrir el archivo android/gradle.properties y pegar
+    
+    android.useDeprecatedNdk=true
+    MYAPP_RELEASE_STORE_FILE=[NAME].keystore
+    MYAPP_RELEASE_KEY_ALIAS=[NAME]-alias
+    MYAPP_RELEASE_STORE_PASSWORD=******
+    MYAPP_RELEASE_KEY_PASSWORD=******
+
+TERCERO: 
+
+    En android/app/build.gradle pegar encima de buildTypes
+
+    signingConfigs {
+        release {
+            if (project.hasProperty('MY_APP_RELEASE_STORE_FILE')) {
+                storeFile file(MY_APP_RELEASE_STORE_FILE)
+                storePassword MY_APP_RELEASE_STORE_PASSWORD
+                keyAlias MY_APP_RELEASE_KEY_ALIAS
+                keyPassword MY_APP_RELEASE_KEY_PASSWORD
+            }
+        }
+    }
+
+    y en buildTypes {release{}} agregar 
+
+    signingConfig signingConfigs.release
+
+CUARTO:
+    Colocarse en la carpeta android en la terminal y ejecutar 
+    `gradlew assembleRelease`
+
+#NOTA: En caso que no funcione probar borrar node_modules/ y ejecutar `npm i`
