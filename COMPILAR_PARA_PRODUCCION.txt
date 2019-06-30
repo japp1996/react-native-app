@@ -1,5 +1,5 @@
 PRIMERO:
-    `keytool -genkey -v -keystore [NAME].keystore -alias [NAME]-alias -keyalg RSA -keysize 2048 validity 10000`
+    `keytool -genkeypair -v -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000`
 
     mover el archivo generado a android/app/
 
@@ -7,10 +7,10 @@ SEGUNDO:
     abrir el archivo android/gradle.properties y pegar
     
     android.useDeprecatedNdk=true
-    MYAPP_RELEASE_STORE_FILE=[NAME].keystore
-    MYAPP_RELEASE_KEY_ALIAS=[NAME]-alias
-    MYAPP_RELEASE_STORE_PASSWORD=******
-    MYAPP_RELEASE_KEY_PASSWORD=******
+    MYAPP_UPLOAD_STORE_FILE=my-upload-key.keystore
+    MYAPP_UPLOAD_KEY_ALIAS=my-key-alias
+    MYAPP_UPLOAD_STORE_PASSWORD=*****
+    MYAPP_UPLOAD_KEY_PASSWORD=*****
 
 TERCERO: 
 
@@ -18,21 +18,22 @@ TERCERO:
 
     signingConfigs {
         release {
-            if (project.hasProperty('MY_APP_RELEASE_STORE_FILE')) {
-                storeFile file(MY_APP_RELEASE_STORE_FILE)
-                storePassword MY_APP_RELEASE_STORE_PASSWORD
-                keyAlias MY_APP_RELEASE_KEY_ALIAS
-                keyPassword MY_APP_RELEASE_KEY_PASSWORD
+            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+                storeFile file(MYAPP_UPLOAD_STORE_FILE)
+                storePassword MYAPP_UPLOAD_STORE_PASSWORD
+                keyAlias MYAPP_UPLOAD_KEY_ALIAS
+                keyPassword MYAPP_UPLOAD_KEY_PASSWORD
             }
         }
     }
-
-    y en buildTypes {release{}} agregar 
-
-    signingConfig signingConfigs.release
-
+    buildTypes {
+        release {
+            ...
+            signingConfig signingConfigs.release
+        }
+    }
 CUARTO:
     Colocarse en la carpeta android en la terminal y ejecutar 
-    `gradlew assembleRelease`
+    `gradlew bundleRelease`
 
 #NOTA: En caso que no funcione probar borrar node_modules/ y ejecutar `npm i`
